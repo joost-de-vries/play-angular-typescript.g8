@@ -1,0 +1,43 @@
+@()
+<!doctype html>
+<html lang="en" data-framework="angular2">
+    <head> @* compilation in the browser *@
+        <meta charset="utf-8">
+        <title>Angular2 • TodoMVC</title>
+        <link rel="stylesheet" href="@routes.Assets.versioned("lib/todomvc-common/base.css")">
+        <link rel="stylesheet" href="assets/stylesheets/todomvc-app.css">
+        <script src='@routes.Assets.versioned("lib/angular2/bundles/angular2-polyfills.js")'></script>
+        <script src='@routes.Assets.versioned("lib/systemjs/dist/system.js")'></script>
+        <script src='@routes.Assets.versioned("lib/rxjs/bundles/Rx.js")'></script>
+        <script src='@routes.Assets.versioned("lib/angular2/bundles/angular2.dev.js")'></script>
+
+        @* typescript is async downloaded by SystemJs and transpiler to Javascript in the browser *@
+
+    </head>
+    <body>
+        <todo-app></todo-app>
+        <footer class="info">
+            <p>Double-click to edit a todo</p>
+            <p>
+				Created by <a href="http://github.com/samccone">Sam Saccone</a> and <a href="http://github.com/colineberhardt">Colin Eberhardt</a>
+                using <a href="http://angular.io">Angular2</a>
+			</p>
+            <p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
+        </footer>
+        <script>
+                System.config({
+                    packages: {
+                        'assets/app': {
+                            defaultExtension: 'js'
+                        },
+                        'assets/lib': {
+                            defaultExtension: 'js'
+                        }
+                    }
+
+                });
+            System.import('assets/app/bootstrap')
+                    .then(null, console.error.bind(console));
+		</script>
+    </body>
+</html>

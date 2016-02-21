@@ -1,0 +1,26 @@
+{
+  /* the configuration of the typescript compiler. See docs https://github.com/Microsoft/TypeScript/wiki/Compiler-Options
+  The settings outDir and rootDir are managed by sbt-typescript.
+  */
+  "compilerOptions": {
+    "target": "es5",
+    "module": "system",
+    /* the following two settings are required for angular2 annotations to work*/
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators":true,
+    /* noImplicitAny when you want your typescript to be fully typed */
+    "noImplicitAny":true
+  },
+  /* the information below is not used by sbt-typescript. but you can use it if you want to run tsc -p .*/
+  "exclude": [
+    "node_modules",
+    "project/target",
+    "typings/main",
+    "typings/main.d.ts",
+    "typings/browser.d.ts",
+    "typings/browser",
+    "target/web/node-modules",
+    "target/web/web-modules",
+    "target/web/public"
+  ]
+}
