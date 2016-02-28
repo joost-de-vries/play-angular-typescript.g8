@@ -17,7 +17,7 @@ libraryDependencies ++= Seq(
   "org.webjars.npm" % "es6-shim" % "0.34.1",
   "org.webjars.npm" % "reflect-metadata" % "0.1.2",
   "org.webjars.npm" % "zone.js" % "0.5.15",
-  "org.webjars.npm" % "typescript" % "1.8.0",
+  "org.webjars.npm" % "typescript" % "1.8.2",
 
   //tslint dependency
   "org.webjars.npm" % "tslint-eslint-rules" % "1.0.1"

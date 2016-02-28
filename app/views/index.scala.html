@@ -28,7 +28,10 @@
         <script>
 			System.config({
                 transpiler: 'typescript',
-                typescriptOptions: { emitDecoratorMetadata: true },
+                typescriptOptions: {
+                    emitDecoratorMetadata: true,
+                    experimentalDecorators: true
+                },
                 packages: {
                     'assets/app': {
                         defaultExtension: 'ts'
