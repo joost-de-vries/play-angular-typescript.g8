@@ -1,7 +1,9 @@
 @()
 <!doctype html>
 <html lang="en" data-framework="angular2">
-    <head> @* compilation in the browser *@
+    <head>
+        @* in this version of the application the typescript compilation is by the play framework.
+           the browser downloads .js files. *@
         <meta charset="utf-8">
         <title>Angular2 • TodoMVC</title>
         <link rel="stylesheet" href="@routes.Assets.versioned("lib/todomvc-common/base.css")">
@@ -10,8 +12,6 @@
         <script src='@routes.Assets.versioned("lib/systemjs/dist/system.js")'></script>
         <script src='@routes.Assets.versioned("lib/rxjs/bundles/Rx.js")'></script>
         <script src='@routes.Assets.versioned("lib/angular2/bundles/angular2.dev.js")'></script>
-
-        @* typescript is async downloaded by SystemJs and transpiler to Javascript in the browser *@
 
     </head>
     <body>
@@ -24,7 +24,7 @@
 			</p>
             <p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
         </footer>
-        <script>
+        <script>    @* javascript is async downloaded by SystemJs *@
                 System.config({
                     packages: {
                         'assets/app': {

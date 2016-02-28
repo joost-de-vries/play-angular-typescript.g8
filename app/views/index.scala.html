@@ -1,7 +1,8 @@
 @()
 <!doctype html>
 <html lang="en" data-framework="angular2">
-    <head> @* compilation in the browser *@
+    <head>
+        @* in this version of the application the typescript compilation is done in the browser *@
         <meta charset="utf-8">
         <title>Angular2 • TodoMVC</title>
         <link rel="stylesheet" href="@routes.Assets.versioned("lib/todomvc-common/base.css")">
@@ -12,8 +13,6 @@
         <script src='@routes.Assets.versioned("lib/rxjs/bundles/Rx.js")'></script>
         <script src='@routes.Assets.versioned("lib/angular2/bundles/angular2.dev.js")'></script>
 
-
-        @* typescript is async downloaded by SystemJs and transpiler to Javascript in the browser *@
     </head>
     <body>
         <todo-app></todo-app>
@@ -26,10 +25,11 @@
             <p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
         </footer>
         <script>
+        @* typescript is async downloaded by SystemJs and transpiled to Javascript in the browser *@
 			System.config({
                 transpiler: 'typescript',
                 typescriptOptions: {
-                    emitDecoratorMetadata: true,
+                    emitDecoratorMetadata: true,  @* these settings of the typescript compiler are required for angular2 *@
                     experimentalDecorators: true
                 },
                 packages: {
@@ -41,8 +41,6 @@
                     }
                 },
                 map: {
-                 /*   'angular2' : '@routes.Assets.versioned("lib/angular2/bundles/angular2.dev.js")' */
-
                     'app' : 'assets/app'
                 }
             });
