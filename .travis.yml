@@ -5,4 +5,4 @@ scala:
 script:
   - sbt stage
 jdk:
-  - openjdk7
+  - oraclejdk8
