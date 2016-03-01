@@ -9,7 +9,9 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators":true,
     /* noImplicitAny when you want your typescript to be fully typed */
-    "noImplicitAny":true
+    "noImplicitAny":true,
+    "noFallthroughCasesInSwitch":true,
+    "noImplicitReturns":true
   },
   /* the information below is not used by sbt-typescript. but you can use it if you want to run tsc -p .*/
   "exclude": [
