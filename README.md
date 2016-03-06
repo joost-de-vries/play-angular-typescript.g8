@@ -11,8 +11,8 @@ Currently the tutorial is still being written.
 
 ##what to do if
 
-"I've created the application throuch activator and it runs fine in activator but I can't run it hangs when I try to run it through sbt"  
+"I've created the application through activator and it runs fine in activator but it hangs when I try to run it through sbt"  
 This is a know problem with activator. Activator generates a file `project\play-fork-run.sbt` that causes this. If you remove it or comment out its contents the application will run in sbt.
 
-"I get an error in that a javascript function is not found"  
+"I get an error saying that a javascript function is not found"  
 Do you have a version of typescript installed globally through npm? If you make sure typescript is not installed globally the sbt plugin should find the correct typescript version that comes with it.
