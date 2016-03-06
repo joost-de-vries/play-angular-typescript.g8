@@ -7,3 +7,12 @@ As mentioned it features an Angular2 application with Typescript compilation int
 Once you have [activator](https://www.typesafe.com/community/core-tools/activator-and-sbt) installed you can run `activator new play-angular2-typescript` and you'll have a local application with a tutorial. Or you can just clone this repo and run `sbt ~run`.
 
 Currently the tutorial is still being written. 
+
+
+##what to do if
+
+"I've created the application throuch activator and it runs fine in activator but I can't run it hangs when I try to run it through sbt"  
+This is a know problem with activator. Activator generates a file `project\play-fork-run.sbt` that causes this. If you remove it or comment out its contents the application will run in sbt.
+
+"I get an error in that a javascript function is not found"  
+Do you have a version of typescript installed globally through npm? If you make sure typescript is not installed globally the sbt plugin should find the correct typescript version that comes with it.
