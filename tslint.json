@@ -1,7 +1,7 @@
 {
   "rules": {
     "no-empty": true, /* this is an eslint rule */
-    "export-name": true, /* the following rules are tslint rules */
+    /* the following rules are tslint rules */
     "class-name": true,
     "comment-format": [
       true,
