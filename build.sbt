@@ -9,8 +9,8 @@ updateOptions := updateOptions.value.withCachedResolution(cachedResoluton = true
 libraryDependencies ++= Seq(
   cache,
   //angular2 dependencies
-  "org.webjars.npm" % "angular2" % "2.0.0-beta.7",
-  "org.webjars.npm" % "systemjs" % "0.19.20",
+  "org.webjars.npm" % "angular2" % "2.0.0-beta.9",
+  "org.webjars.npm" % "systemjs" % "0.19.24",
   "org.webjars.npm" % "todomvc-common" % "1.0.2",
   "org.webjars.npm" % "rxjs" % "5.0.0-beta.2",
   "org.webjars.npm" % "es6-promise" % "3.0.2",
