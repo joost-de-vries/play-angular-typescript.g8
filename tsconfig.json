@@ -11,7 +11,8 @@
     /* noImplicitAny when you want your typescript to be fully typed */
     "noImplicitAny":true,
     "noFallthroughCasesInSwitch":true,
-    "noImplicitReturns":true
+    "noImplicitReturns":true,
+    "outDir": "./target/ts"
   },
   /* the information below is not used by sbt-typescript. but you can use it if you want to run tsc -p .*/
   "exclude": [
@@ -21,8 +22,6 @@
     "typings/main.d.ts",
     "typings/browser.d.ts",
     "typings/browser",
-    "target/web/node-modules",
-    "target/web/web-modules",
-    "target/web/public"
+    "target/web"
   ]
 }
