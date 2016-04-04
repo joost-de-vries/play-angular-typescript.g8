@@ -25,7 +25,10 @@
       true,
       "double"
     ],
-    "semicolon": true,
+    "semicolon": [
+      true,
+      "never"
+    ],
     "triple-equals": [
       true,
       "allow-null-check"

@@ -1,57 +1,57 @@
-import {Component} from "angular2/core";
-import {TodoStore, Todo} from "./services/store";
+import {Component} from "angular2/core"
+import {TodoStore, Todo} from "./services/store"
 
 @Component({
     selector: "todo-app",
     templateUrl: "assets/app/app.html"
 })
 export default class TodoApp {
-    newTodoText = "";
+    newTodoText = ""
 
     constructor(private todoStore:TodoStore) {
-        this.todoStore = todoStore;
+        this.todoStore = todoStore
     }
 
     stopEditing(todo:Todo, editedTitle:string) {
-        todo.title = editedTitle;
-        todo.editing = false;
+        todo.title = editedTitle
+        todo.editing = false
     }
 
     cancelEditingTodo(todo:Todo) {
-        todo.editing = false;
+        todo.editing = false
     }
 
     updateEditingTodo(todo:Todo, editedTitle:string) {
-        editedTitle = editedTitle.trim();
-        todo.editing = false;
+        editedTitle = editedTitle.trim()
+        todo.editing = false
 
         if (editedTitle.length === 0) {
-            return this.todoStore.remove(todo);
+            return this.todoStore.remove(todo)
         }
 
-        todo.title = editedTitle;
+        todo.title = editedTitle
     }
 
     editTodo(todo:Todo) {
-        todo.editing = true;
+        todo.editing = true
     }
 
     removeCompleted() {
-        this.todoStore.removeCompleted();
+        this.todoStore.removeCompleted()
     }
 
     toggleCompletion(todo:Todo) {
-        this.todoStore.toggleCompletion(todo);
+        this.todoStore.toggleCompletion(todo)
     }
 
     remove(todo:Todo) {
-        this.todoStore.remove(todo);
+        this.todoStore.remove(todo)
     }
 
     addTodo() {
         if (this.newTodoText.trim().length) {
-            this.todoStore.add(this.newTodoText);
-            this.newTodoText = "";
+            this.todoStore.add(this.newTodoText)
+            this.newTodoText = ""
         }
     }
 }
