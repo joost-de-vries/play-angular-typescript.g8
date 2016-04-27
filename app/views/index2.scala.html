@@ -17,9 +17,8 @@
 
         <script>
 
-            @* we'd expect the module to import to be 'app/bootstrap'
-               due to a limitation of tsc 1.8 we have to prefix the path in our source repo as well *@
-                System.import('app/assets/app/bootstrap')
+            @* systemjs will load the module and all it depends on from the main.js file. *@
+                System.import('app/bootstrap')
                         .catch(console.error.bind(console));
 
         </script>
