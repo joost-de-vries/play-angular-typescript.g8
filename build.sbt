@@ -20,7 +20,8 @@ libraryDependencies ++= Seq(
   "org.webjars.npm" % "typescript" % "1.8.10",
 
   //tslint dependency
-  "org.webjars.npm" % "tslint-eslint-rules" % "1.2.0"
+  "org.webjars.npm" % "tslint-eslint-rules" % "1.2.0",
+  "org.webjars.npm" % "codelyzer" % "0.0.18"
 )
 dependencyOverrides += "org.webjars.npm" % "minimatch" % "2.0.10"
 
@@ -32,7 +33,7 @@ typingsFile := Some(baseDirectory.value / "typings" / "browser.d.ts")
 // use the webjars npm directory (target/web/node_modules ) for resolution of module imports of angular2/core etc
 resolveFromWebjarsNodeModulesDir := true
 
-// use the combined tslint and eslint rules
-(rulesDirectories in tslint) := Some(List(tslintEslintRulesDir.value))
+// use the combined tslint and eslint rules plus ng2 lint rules
+(rulesDirectories in tslint) := Some(List(tslintEslintRulesDir.value,ng2LintRulesDir.value))
 
 routesGenerator := InjectedRoutesGenerator
