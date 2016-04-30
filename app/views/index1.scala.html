@@ -22,12 +22,16 @@
                         'assets/lib': {
                             defaultExtension: 'js'
                         }
+                    },
+                    map: {
+                        'app' : 'assets/app' @* play standardly publishes our asset files under /assets *@
                     }
+
 
                 });
                 @* SystemJs works out which other modules our bootstrap module depends on and will download and load them*@
-            System.import('assets/app/bootstrap')
-                    .then(null, console.error.bind(console));
+            System.import('app/bootstrap')
+                    .catch(console.error.bind(console));
 		</script>
     </head>
     <body>
