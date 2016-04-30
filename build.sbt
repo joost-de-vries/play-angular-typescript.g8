@@ -30,7 +30,7 @@ excludeFilter in Assets in typescript:= GlobFilter("*.spec.ts") | GlobFilter("*.
 
 sourceDirectory in TestAssets := (sourceDirectory in Assets).value
 includeFilter in TestAssets in typescript := GlobFilter("*.spec.ts") | GlobFilter("*.mock.ts")
-excludeFilter in TestAssets in typescript := -GlobFilter("*.spec.ts") | GlobFilter("*.mock.ts")
+excludeFilter in TestAssets in typescript := - (GlobFilter("*.spec.ts") | GlobFilter("*.mock.ts"))
 
 logLevel in typescript := Level.Debug
 
