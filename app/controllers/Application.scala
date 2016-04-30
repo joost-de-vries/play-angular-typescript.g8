@@ -11,7 +11,7 @@ class Application extends Controller {
       * index1() :    compiles the ts files to individual js files. Systemjs loads the individual files.
       * index2() :    add the option -DtsCompileMode=stage to your sbt task . F.i. 'sbt ~run -DtsCompileMode=stage' this will produce the app as one single js file.
       */
-    Ok(views.html.index1())
+    Ok(views.html.index2())
   }
 
 }
