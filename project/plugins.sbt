@@ -9,4 +9,4 @@ addSbtPlugin("name.de-vries" % "sbt-tslint" % "0.9.4")
 
 addSbtPlugin("com.typesafe.sbt" % "sbt-digest" % "1.1.0")
 
-
+addSbtPlugin("com.timushev.sbt" % "sbt-updates" % "0.1.10")
