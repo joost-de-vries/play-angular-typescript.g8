@@ -25,6 +25,15 @@ libraryDependencies ++= Seq(
 )
 dependencyOverrides += "org.webjars.npm" % "minimatch" % "2.0.10"
 
+includeFilter in Assets in typescript:= GlobFilter("*.ts") | GlobFilter("*.tsx")
+excludeFilter in Assets in typescript:= GlobFilter("*.spec.ts") | GlobFilter("*.mock.ts")
+
+sourceDirectory in TestAssets := (sourceDirectory in Assets).value
+includeFilter in TestAssets in typescript := GlobFilter("*.spec.ts") | GlobFilter("*.mock.ts")
+excludeFilter in TestAssets in typescript := -GlobFilter("*.spec.ts") | GlobFilter("*.mock.ts")
+
+logLevel in typescript := Level.Debug
+
 // the typescript typing information is by convention in the typings directory
 // It provides ES6 implementations. This is required when compiling to ES5.
 typingsFile := Some(baseDirectory.value / "typings" / "browser.d.ts")
