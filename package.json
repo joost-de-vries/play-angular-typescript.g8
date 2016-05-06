@@ -1,0 +1,7 @@
+{
+  "devDependencies": {
+    "karma": "^0.13.22",
+    "karma-jasmine": "^0.3.8",
+    "karma-phantomjs-launcher": "^1.0.0"
+  }
+}
