@@ -21,7 +21,7 @@ libraryDependencies ++= Seq(
 
   //tslint dependency
   "org.webjars.npm" % "tslint-eslint-rules" % "1.2.0",
-  "org.webjars.npm" % "codelyzer" % "0.0.18"
+  "org.webjars.npm" % "codelyzer" % "0.0.19"
 )
 dependencyOverrides += "org.webjars.npm" % "minimatch" % "2.0.10"
 
