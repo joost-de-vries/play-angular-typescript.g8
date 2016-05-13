@@ -4,6 +4,9 @@ This is an activator template that generates a sample Play Angular2 Typescript 1
 
 As mentioned it features an Angular2 application with Typescript compilation integrated with the continuous compilation of Play Scala code. The Typescript code is linted with `tslint`.
 
+##NOTE
+If you're using Play with Angular2 please consider voting on [this issue](https://github.com/angular/angular/issues/8571). It basically means that since RC0 Angular2 is no longer available through webjars. Which jeopardises the feasability of this kind of project.
+
 ##Installation
 Once you have [activator](https://www.typesafe.com/community/core-tools/activator-and-sbt) installed you can run `activator new play-angular2-typescript` and you'll have a local application with a tutorial. Or you can just clone this repo and run `sbt ~run`.
 
