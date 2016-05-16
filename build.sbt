@@ -21,12 +21,15 @@ libraryDependencies ++= Seq(
 
   //tslint dependency
   "org.webjars.npm" % "tslint-eslint-rules" % "1.2.0",
-  "org.webjars.npm" % "codelyzer" % "0.0.19"   //,
+  "org.webjars.npm" % "codelyzer" % "0.0.19",
 
   //test
-//  "org.webjars.npm" % "jasmine-core" % "2.4.1"
+  "org.webjars.npm" % "jasmine" % "2.4.1" % "test"
 )
-dependencyOverrides += "org.webjars.npm" % "minimatch" % "3.0.0"
+dependencyOverrides ++= Set(
+  "org.webjars.npm" % "minimatch" % "3.0.0",
+  "org.webjars.npm" % "glob" % "7.0.3"
+)
 
 // the typescript typing information is by convention in the typings directory
 // It provides ES6 implementations. This is required when compiling to ES5.
