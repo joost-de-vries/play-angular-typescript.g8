@@ -3,15 +3,15 @@
 <html lang="en" data-framework="angular2">
     <head>
         @* in this version of the application the typescript compilation is done in the browser *@
-        <meta charset="utf-8">
-        <title>Angular2 • TodoMVC</title>
-        <link rel="stylesheet" href="@routes.Assets.versioned("lib/todomvc-common/base.css")">
-        <link rel="stylesheet" href="assets/stylesheets/todomvc-app.css">
-        <script src='@routes.Assets.versioned("lib/angular2/bundles/angular2-polyfills.js")'></script>
-        <script src='@routes.Assets.versioned("lib/systemjs/dist/system.js")'></script>
-        <script src='@routes.Assets.versioned("lib/typescript/lib/typescript.js")'></script>
-        <script src='@routes.Assets.versioned("lib/rxjs/bundles/Rx.js")'></script>
-        <script src='@routes.Assets.versioned("lib/angular2/bundles/angular2.dev.js")'></script>
+    <meta charset="utf-8">
+    <title>Angular2 • TodoMVC</title>
+    <link rel="stylesheet" href="@routes.Assets.versioned("lib/todomvc-common/base.css")">
+    <link rel="stylesheet" href="assets/stylesheets/todomvc-app.css">
+    <script src='@routes.Assets.versioned("lib/angular2/bundles/angular2-polyfills.js")'></script>
+    <script src='@routes.Assets.versioned("lib/systemjs/dist/system.js")'></script>
+    <script src='@routes.Assets.versioned("lib/typescript/lib/typescript.js")'></script>
+    <script src='@routes.Assets.versioned("lib/rxjs/bundles/Rx.js")'></script>
+    <script src='@routes.Assets.versioned("lib/angular2/bundles/angular2.dev.js")'></script>
 
     </head>
     <body>
@@ -19,7 +19,8 @@
         <footer class="info">
             <p>Double-click to edit a todo</p>
             <p>
-				Created by <a href="http://github.com/samccone">Sam Saccone</a> and <a href="http://github.com/colineberhardt">Colin Eberhardt</a>
+				Created by <a href="http://github.com/samccone">Sam Saccone</a>
+                and <a href="http://github.com/colineberhardt">Colin Eberhardt</a>
                 using <a href="http://angular.io">Angular2</a>
 			</p>
             <p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
@@ -29,23 +30,24 @@
 			System.config({
                 transpiler: 'typescript',
                 typescriptOptions: {
-                    emitDecoratorMetadata: true,  @* these settings of the typescript compiler are required for angular2 *@
-                    experimentalDecorators: true
-                },
-                packages: {
-                    'assets/app': {
-                        defaultExtension: 'ts'
-                    },
-                    'assets/lib': {
-                        defaultExtension: 'js'
-                    }
-                },
-                map: {
-                    'app' : 'assets/app'
-                }
-            });
-            System.import('app/bootstrap')
-                    .then(null, console.error.bind(console));
-		</script>
+                               @* these settings of the typescript compiler are required for angular2 *@
+                                emitDecoratorMetadata: true,
+                                experimentalDecorators: true
+                            },
+                            packages: {
+                                'assets/app': {
+                                    defaultExtension: 'ts' @* the modules of our app are to be downloaded as typescript *@
+                                },
+                                'assets/lib': {
+                                    defaultExtension: 'js' @* the libs we depend on are javascript *@
+                                }
+                            },
+                            map: {
+                                'app' : 'assets/app' @* play standardly publishes our asset files under /assets *@
+                            }
+                        });
+                        System.import('app/bootstrap')
+                                .then(null, console.error.bind(console));
+                    </script>
     </body>
 </html>

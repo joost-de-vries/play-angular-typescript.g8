@@ -5,7 +5,7 @@ import {TodoStore, Todo} from "./services/store"
     selector: "todo-app",
     templateUrl: "assets/app/app.html"
 })
-export default class TodoApp {
+export default class TodoAppComponent {
     newTodoText = ""
 
     constructor(private todoStore:TodoStore) {

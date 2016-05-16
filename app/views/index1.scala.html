@@ -12,7 +12,27 @@
         <script src='@routes.Assets.versioned("lib/systemjs/dist/system.js")'></script>
         <script src='@routes.Assets.versioned("lib/rxjs/bundles/Rx.js")'></script>
         <script src='@routes.Assets.versioned("lib/angular2/bundles/angular2.dev.js")'></script>
+        <script>    @* our app is downloaded as individual javascript files by SystemJs
+                     after compilation by sbt-typescript*@
+                System.config({
+                    packages: {
+                        'assets/app': {
+                            defaultExtension: 'js'
+                        },
+                        'assets/lib': {
+                            defaultExtension: 'js'
+                        }
+                    },
+                    map: {
+                        'app' : 'assets/app' @* play standardly publishes our asset files under /assets *@
+                    }
 
+
+                });
+                @* SystemJs works out which other modules our bootstrap module depends on and will download and load them*@
+            System.import('app/bootstrap')
+                    .catch(console.error.bind(console));
+		</script>
     </head>
     <body>
         <todo-app></todo-app>
@@ -24,20 +44,5 @@
 			</p>
             <p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
         </footer>
-        <script>    @* javascript is async downloaded by SystemJs *@
-                System.config({
-                    packages: {
-                        'assets/app': {
-                            defaultExtension: 'js'
-                        },
-                        'assets/lib': {
-                            defaultExtension: 'js'
-                        }
-                    }
-
-                });
-            System.import('assets/app/bootstrap')
-                    .then(null, console.error.bind(console));
-		</script>
     </body>
 </html>
