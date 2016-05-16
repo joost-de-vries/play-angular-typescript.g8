@@ -1,5 +1,7 @@
 import {bootstrap} from "angular2/platform/browser"
 import TodoAppComponent from "./app"
-import {TodoStore} from "./services/store"
+import {LocalStorageTodoStore} from "./services/store"
+import {TodoStore} from "./services/todo.store"
+import {provide} from "angular2/core"
 
-bootstrap(TodoAppComponent, [TodoStore])
+bootstrap(TodoAppComponent, [ provide(TodoStore, {useClass: LocalStorageTodoStore}) ])

@@ -1,4 +1,6 @@
 import {Injectable} from "angular2/core"
+import {TodoStore} from "./todo.store"
+
 export interface Todo {
     completed: Boolean
     editing: Boolean
@@ -6,7 +8,7 @@ export interface Todo {
     title: String
 }
 @Injectable()
-export class TodoStore {
+export class LocalStorageTodoStore implements TodoStore {
     todos:Array<Todo>
 
     constructor() {
