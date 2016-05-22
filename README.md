@@ -1,3 +1,7 @@
+#Let's meet in person at Scala Days Berlin
+I like talking Scala, Play, Typescript, Angular2 etc etc. Would be fun to meet you there!
+You can message me through twitter.
+
 #Play Angular2 Typescript sample application [![Build Status](https://travis-ci.org/joost-de-vries/play-angular2-typescript.png?branch=master)](https://travis-ci.org/joost-de-vries/play-angular2-typescript)
 
 This is an activator template that generates a sample Play Angular2 Typescript 1.8 application with a tutorial.
