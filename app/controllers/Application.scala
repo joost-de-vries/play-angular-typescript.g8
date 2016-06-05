@@ -1,6 +1,6 @@
 package controllers
 
-import play.api._
+import models.Todo
 import play.api.mvc._
 
 class Application extends Controller {
@@ -35,6 +35,16 @@ class Application extends Controller {
         |     "title": "Three"
         |   }
         | ] """.stripMargin)
+  }
+
+  def createTodo() = Action { request =>
+      val json = request.body.asJson.get
+      val todos = json.as[Seq[Todo]]
+    Ok("""[{
+         |     "completed": false,
+         |     "editing": false,
+         |     "title": "One"
+         |   }]""".stripMargin)
   }
 
 }

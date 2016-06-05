@@ -38,8 +38,6 @@ export class RemoteStorageTodoStore implements TodoStore {
     }
 
     private handleError (error: any) {
-        // In a real world app, we might use a remote logging infrastructure
-        // We'd also dig deeper into the error to get a better message
         let errMsg = (error.message) ? error.message :
             error.status ? `${error.status} - ${error.statusText}` : "Server error"
         console.error(errMsg) // log to console instead
@@ -47,7 +45,9 @@ export class RemoteStorageTodoStore implements TodoStore {
     }
 
     private updateStore() {
-        localStorage.setItem("angular2-todos", JSON.stringify(this.todos))
+        return this.http.post(this.toDoUrl, JSON.stringify(this.todos))
+            .map(this.extractData)
+            .catch(this.handleError)
     }
 
     private getWithCompleted(completed:Boolean) {
