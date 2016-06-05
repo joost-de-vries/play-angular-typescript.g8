@@ -14,17 +14,16 @@ export interface Todo {
 }
 @Injectable()
 export class RemoteStorageTodoStore implements TodoStore {
-    todos:Array<Todo>
-    private toDoUrl: String = "app/todo"
-    errorMessage: String
+    todos:Array<Todo> = []
+    private toDoUrl: string = "todos"
+    errorMessage: string
 
     constructor(private http: Http) {
+        let parent: RemoteStorageTodoStore = this
         this.getTodos()
             .subscribe(
-                todos => this.todos = todos,
-                error =>  this.errorMessage = <any>error)
-
-        this.todos = JSON.parse(localStorage.getItem("angular2-todos") || "[]")
+                todos => parent.todos = todos,
+                error =>  parent.errorMessage = <any>error)
     }
 
     getTodos (): Observable<Todo[]> {
@@ -35,7 +34,7 @@ export class RemoteStorageTodoStore implements TodoStore {
 
     private extractData(res: Response) {
         let body = res.json()
-        return body.data || { }
+        return body || []
     }
 
     private handleError (error: any) {

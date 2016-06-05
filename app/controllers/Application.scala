@@ -14,4 +14,27 @@ class Application extends Controller {
     Ok(views.html.index1())
   }
 
+  def todos = Action {
+
+    Ok(
+      """
+        | [
+        |   {
+        |     "completed": false,
+        |     "editing": false,
+        |     "title": "One"
+        |   },
+        |   {
+        |     "completed": false,
+        |     "editing": false,
+        |     "title": "Two"
+        |   },
+        |   {
+        |     "completed": false,
+        |     "editing": false,
+        |     "title": "Three"
+        |   }
+        | ] """.stripMargin)
+  }
+
 }
