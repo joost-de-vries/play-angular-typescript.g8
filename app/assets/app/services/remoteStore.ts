@@ -4,6 +4,8 @@ import { Http, Response } from "angular2/http"
 import { Observable } from "rxjs/Observable"
 import { Observer } from "rxjs/Observer"
 
+import { Headers, RequestOptions } from "angular2/http"
+
 import "rxjs/add/operator/map"
 import "rxjs/add/operator/catch"
 
@@ -45,9 +47,13 @@ export class RemoteStorageTodoStore implements TodoStore {
     }
 
     private updateStore() {
-        return this.http.post(this.toDoUrl, JSON.stringify(this.todos))
+        let headers = new Headers({ "Content-Type": "application/json" })
+        let options = new RequestOptions({ headers: headers })
+        return this.http.post(this.toDoUrl, JSON.stringify(this.todos), options)
             .map(this.extractData)
             .catch(this.handleError)
+            .subscribe(todos => alert("success"),
+                       error =>  alert("fail"))
     }
 
     private getWithCompleted(completed:Boolean) {
