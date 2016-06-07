@@ -4,7 +4,13 @@ import models.Todo
 import play.api.libs.json.{Json, _}
 import play.api.mvc.{Action, _}
 
-class Application extends Controller {
+import play.api.cache._
+import play.api.mvc._
+import javax.inject.Inject
+
+class Application @Inject() (cache: CacheApi) extends Controller {
+
+  private val TodoCacheName = "todoCache"
 
   def index = Action {
     /** change the template here to use a different way of compilation and loading of the ts ng2 app.
@@ -15,10 +21,9 @@ class Application extends Controller {
     Ok(views.html.index1())
   }
 
-  val t = List(Todo("Foo"), Todo("Bar"), Todo("Frog"))
-
   def todos = Action {
-    Ok(Json.toJson(t))
+    val todosList = cache.getOrElse(TodoCacheName)(Seq.empty[Todo])
+    Ok(Json.toJson(todosList))
   }
 
   /**
@@ -32,7 +37,9 @@ class Application extends Controller {
 
     // Expecting json body
     jsonBody.map { json =>
-      Ok(Json.toJson(t))
+      val newList = json.as[Seq[Todo]]
+      cache.set(TodoCacheName, newList)
+      Ok(Json.toJson(newList))
     }.getOrElse {
       BadRequest("Expecting application/json request body")
     }

@@ -24,7 +24,10 @@ libraryDependencies ++= Seq(
   "org.webjars.npm" % "codelyzer" % "0.0.19",
 
   //test
-  "org.webjars.npm" % "jasmine" % "2.4.1" % "test"
+  "org.webjars.npm" % "jasmine" % "2.4.1" % "test",
+
+  //scala stuff
+  "org.scalatest" %% "scalatest" % "2.2.6" % "test"
 )
 dependencyOverrides ++= Set(
   "org.webjars.npm" % "minimatch" % "3.0.0",
