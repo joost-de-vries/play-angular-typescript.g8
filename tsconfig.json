@@ -10,6 +10,14 @@
     "experimentalDecorators":true,
     /* for reading your ts source while debugging from a browser */
     "sourceMap": true,
+    "rootDirs": ["app/assets","test/assets"],
+    "baseUrl": ".",
+    "paths": {
+      "*": [
+        "*",
+        "target/web/node-modules/main/webjars/*"
+      ]
+    },
     /* noImplicitAny when you want your typescript to be fully typed */
     "noImplicitAny":true,
     "noFallthroughCasesInSwitch":true,
