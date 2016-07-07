@@ -57,6 +57,8 @@ export class LocalStorageTodoStore implements TodoStore {
 
     add(title:String) {
         const todo = <Todo>{
+            completed: false,
+            editing: false,
             title: title
         }
         this.todos.push(todo)
