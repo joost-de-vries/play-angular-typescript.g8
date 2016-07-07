@@ -8,30 +8,67 @@
         <title>Angular2 • TodoMVC</title>
         <link rel="stylesheet" href="@routes.Assets.versioned("lib/todomvc-common/base.css")">
         <link rel="stylesheet" href="assets/stylesheets/todomvc-app.css">
-        <script src='@routes.Assets.versioned("lib/angular2/bundles/angular2-polyfills.js")'></script>
-        <script src='@routes.Assets.versioned("lib/systemjs/dist/system.js")'></script>
-        <script src='@routes.Assets.versioned("lib/rxjs/bundles/Rx.js")'></script>
-        <script src='@routes.Assets.versioned("lib/angular2/bundles/angular2.dev.js")'></script>
+        <script type='text/javascript' src='@routes.Assets.versioned("lib/systemjs/dist/system-polyfills.js")'></script>
+        <script type='text/javascript' src='@routes.Assets.versioned("lib/core-js/client/shim.min.js")'></script>
+        <script type='text/javascript' src='@routes.Assets.versioned("lib/zone.js/dist/zone.js")'></script>
+        <script type='text/javascript' src='@routes.Assets.versioned("lib/reflect-metadata/Reflect.js")'></script>
+        <script type='text/javascript' src='@routes.Assets.versioned("lib/systemjs/dist/system.src.js")'></script>
+
         <script>    @* our app is downloaded as individual javascript files by SystemJs
                      after compilation by sbt-typescript*@
-                System.config({
-                    packages: {
-                        'assets/app': {
-                            defaultExtension: 'js'
-                        },
-                        'assets/lib': {
-                            defaultExtension: 'js'
-                        }
-                    },
-                    map: {
-                        'app' : 'assets/app' @* play standardly publishes our asset files under /assets *@
-                    }
+            var map = {
+                'app': 'assets/app',
+                '@@angular':'assets/lib/@@angular',
+                'rxjs':'assets/lib/rxjs',
+                'symbol-observable': 'assets/lib/symbol-observable'
+
+            };
 
 
-                });
-                @* SystemJs works out which other modules our bootstrap module depends on and will download and load them*@
-            System.import('app/bootstrap')
-                    .catch(console.error.bind(console));
+        var packages = {
+                'app': {main: 'main.js', defaultExtension: 'js'},
+                'rxjs': {defaultExtension: 'js'},
+                'assets/lib': {defaultExtension: 'js'},
+                'symbol-observable': {defaultExtension: 'js', main: 'index.js'}
+            };
+        var ngPackageNames = [
+                'common',
+                'compiler',
+                'core',
+                'http',
+                'platform-browser',
+                'platform-browser-dynamic',
+                'router'
+            ];
+
+        function packIndex(pkgName) {
+          packages['@@angular/'+pkgName] = { main: 'index.js', defaultExtension: 'js' };
+        }
+        function packUmd(pkgName) {
+          packages['@@angular/'+pkgName] = { main: '/bundles/' + pkgName + '.umd.js', defaultExtension: 'js' };
+        }
+          // Most environments should use UMD; some (Karma) need the individual index files
+        function addAngularModulesToMap(pkgName) {
+          map['@@angular/'+pkgName] = 'assets/lib/angular__' + pkgName;
+        }
+
+          // Add package entries for angular packages
+        var setPackageConfig = System.packageWithIndex ? packIndex : packUmd;
+        ngPackageNames.forEach(setPackageConfig)
+
+          // Add map entries for angular packages
+        ngPackageNames.forEach(function(pkgName){
+           addAngularModulesToMap(pkgName)
+        });
+
+        System.config({
+            map : map,
+            packages: packages,
+        });
+        @* SystemJs works out which other modules our app module depends on and will download and load them*@
+        System.import('app')
+            .catch(console.error.bind(console));
+
 		</script>
     </head>
     <body>

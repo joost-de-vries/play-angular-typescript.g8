@@ -2,13 +2,10 @@ import {
     describe,
     it,
     inject,
-    injectAsync,
     beforeEachProviders,
-    MockApplicationRef,
     TestComponentBuilder
-} from "angular2/testing"
+} from "@angular/core/testing"
 import { Todo } from "./app/services/store"
-import {provide, ApplicationRef} from "angular2/core"
 
 // class MockTodoStorage implements TodoStorage {}
 
