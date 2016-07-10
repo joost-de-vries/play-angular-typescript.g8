@@ -4,7 +4,8 @@
   */
   "compilerOptions": {
     "target": "es5",
-    "module": "commonjs",
+    "module": "system",
+    "moduleResolution": "node",
     /* the following two settings are required for angular2 annotations to work*/
     "emitDecoratorMetadata": true,
     "experimentalDecorators":true,
