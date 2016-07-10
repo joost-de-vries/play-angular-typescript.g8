@@ -1,6 +1,6 @@
 #Play Angular2 Typescript sample application [![Build Status](https://travis-ci.org/joost-de-vries/play-angular2-typescript.png?branch=master)](https://travis-ci.org/joost-de-vries/play-angular2-typescript)
 
-This is an activator template that generates a sample Play Angular2 Typescript 2.0 application with a tutorial.
+This is an activator template that generates a sample Play Angular2 Typescript 2.0 application.
 
 As mentioned it features an Angular2 application with Typescript compilation integrated with the continuous compilation of Play Scala code. The Typescript code is linted with `tslint`.
 
