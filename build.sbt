@@ -1,5 +1,5 @@
 name := """play-angular2-typescript"""
-version := "0.2.0-beta.1"
+version := "0.2.0-beta.2"
 lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
 scalaVersion := "2.11.8"
@@ -31,7 +31,7 @@ libraryDependencies ++= {
 
     //tslint dependency
     "org.webjars.npm" % "tslint-eslint-rules" % "1.2.0",
-    "org.webjars.npm" % "codelyzer" % "0.0.19",
+    "org.webjars.npm" % "codelyzer" % "0.0.25",
     "org.webjars.npm" % "types__jasmine" % "2.2.26-alpha" % "test"
 
     //test
@@ -49,8 +49,8 @@ resolveFromWebjarsNodeModulesDir := true
 
 // use the combined tslint and eslint rules plus ng2 lint rules
 (rulesDirectories in tslint) := Some(List(
-  tslintEslintRulesDir.value  //,    disable codelyzer until it supports ts 2.0
-//  ng2LintRulesDir.value
+  tslintEslintRulesDir.value,
+  ng2LintRulesDir.value
 ))
 
 routesGenerator := InjectedRoutesGenerator

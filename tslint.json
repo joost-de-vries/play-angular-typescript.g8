@@ -1,6 +1,6 @@
 {
   "rules": {
-    /* ng2 rules
+    /* ng2 rules */
 
     "directive-selector-name": [true, "camelCase"],
     "component-selector-name": [true, "kebab-case"],
@@ -19,7 +19,7 @@
     "use-pipe-transform-interface": true,
     "pipe-naming": [true, "camelCase", "todo"],
     "component-class-suffix": true,
-    "directive-class-suffix": true, */
+    "directive-class-suffix": true,
 
     "no-empty": true, /* this is an eslint rule */
 
