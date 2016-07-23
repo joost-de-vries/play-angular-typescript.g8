@@ -20,6 +20,8 @@
     "pipe-naming": [true, "camelCase", "todo"],
     "component-class-suffix": true,
     "directive-class-suffix": true,
+    "import-destructuring-spacing": false,
+
 
     "no-empty": true, /* this is an eslint rule */
 
