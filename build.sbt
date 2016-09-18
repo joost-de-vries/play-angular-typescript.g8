@@ -7,7 +7,7 @@ incOptions := incOptions.value.withNameHashing(true)
 updateOptions := updateOptions.value.withCachedResolution(cachedResoluton = true)
 
 libraryDependencies ++= {
-  val ngVersion="2.0.0-rc.4"
+  val ngVersion="2.0.0"
   Seq(
     cache,
 
@@ -15,6 +15,7 @@ libraryDependencies ++= {
     "org.webjars.npm" % "angular__common" % ngVersion,
     "org.webjars.npm" % "angular__compiler" % ngVersion,
     "org.webjars.npm" % "angular__core" % ngVersion,
+    "org.webjars.npm" % "angular__forms" % ngVersion,
     "org.webjars.npm" % "angular__platform-browser-dynamic" % ngVersion,
     "org.webjars.npm" % "angular__platform-browser" % ngVersion,
     "org.webjars.npm" % "systemjs" % "0.19.31",
@@ -23,7 +24,7 @@ libraryDependencies ++= {
     "org.webjars.npm" % "es6-promise" % "3.1.2",
     "org.webjars.npm" % "es6-shim" % "0.35.1",
     "org.webjars.npm" % "reflect-metadata" % "0.1.3",
-    "org.webjars.npm" % "zone.js" % "0.6.12",
+    "org.webjars.npm" % "zone.js" % "0.6.21",
     "org.webjars.npm" % "core-js" % "2.4.0",
     "org.webjars.npm" % "symbol-observable" % "1.0.1",
 
