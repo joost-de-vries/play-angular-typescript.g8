@@ -1,8 +1,4 @@
-import {bootstrap} from "@angular/platform-browser-dynamic"
-import TodoAppComponent from "./app"
-import {LocalStorageTodoStore} from "./services/store"
-import {TodoStore} from "./services/todo.store"
+import { platformBrowserDynamic } from "@angular/platform-browser-dynamic"
+import { TodoAppModule } from "./app.module"
 
-bootstrap(TodoAppComponent, [
-    {provide:TodoStore, useClass: LocalStorageTodoStore}
-])
+platformBrowserDynamic().bootstrapModule(TodoAppModule)
