@@ -31,7 +31,7 @@ libraryDependencies ++= {
     "org.webjars.npm" % "typescript" % "2.0.3",
 
     //tslint dependency
-    "org.webjars.npm" % "tslint-eslint-rules" % "1.5.0",
+    "org.webjars.npm" % "tslint-eslint-rules" % "2.1.0",
     "org.webjars.npm" % "codelyzer" % "0.0.28",
     "org.webjars.npm" % "types__jasmine" % "2.2.26-alpha" % "test"
     //test
