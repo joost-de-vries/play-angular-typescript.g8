@@ -7,7 +7,7 @@ incOptions := incOptions.value.withNameHashing(true)
 updateOptions := updateOptions.value.withCachedResolution(cachedResoluton = true)
 
 libraryDependencies ++= {
-  val ngVersion="2.0.0"
+  val ngVersion="2.0.2"
   Seq(
     cache,
 
@@ -28,7 +28,7 @@ libraryDependencies ++= {
     "org.webjars.npm" % "core-js" % "2.4.1",
     "org.webjars.npm" % "symbol-observable" % "1.0.1",
 
-    "org.webjars.npm" % "typescript" % "2.0.2",
+    "org.webjars.npm" % "typescript" % "2.0.3",
 
     //tslint dependency
     "org.webjars.npm" % "tslint-eslint-rules" % "1.5.0",
