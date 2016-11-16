@@ -1,0 +1,22 @@
+.search-result{
+  border-bottom: 1px solid gray;
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+  width:195px;
+  height: 20px;
+  padding: 5px;
+  background-color: white;
+  cursor: pointer;
+}
+
+#search-box{
+  width: 200px;
+  height: 20px;
+}
+
+
+/*
+Copyright 2016 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/
