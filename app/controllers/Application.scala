@@ -14,4 +14,5 @@ class Application extends Controller {
     Ok(views.html.index1())
   }
 
+  def other(others: String) = index
 }
