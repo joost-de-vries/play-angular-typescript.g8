@@ -19,5 +19,5 @@ describe('some component', () => {
         };
         // This is a test.
         console.log('running js test '+JSON.stringify(todo));
-    })
-})
+    });
+});

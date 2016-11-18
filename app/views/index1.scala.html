@@ -20,7 +20,6 @@
             var map = {
                 'app': 'assets/app',
                 '@@angular':'assets/lib/@@angular',
-                'angular-in-memory-web-api':'assets/lib/angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
                 'rxjs':'assets/lib/rxjs',
                 'symbol-observable': 'assets/lib/symbol-observable'
 
@@ -58,7 +57,7 @@
 
           // Add package entries for angular packages
         var setPackageConfig = System.packageWithIndex ? packIndex : packUmd;
-        ngPackageNames.forEach(setPackageConfig)
+        ngPackageNames.forEach(setPackageConfig);
 
           // Add map entries for angular packages
         ngPackageNames.forEach(function(pkgName){
@@ -67,7 +66,7 @@
 
         System.config({
             map : map,
-            packages: packages,
+            packages: packages
         });
         @* SystemJs works out which other modules our app module depends on and will download and load them*@
         System.import('app')

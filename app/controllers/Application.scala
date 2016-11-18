@@ -14,5 +14,7 @@ class Application extends Controller {
     Ok(views.html.index1())
   }
 
+  def notFound(notFound: String) = Default.notFound
+
   def other(others: String) = index
 }

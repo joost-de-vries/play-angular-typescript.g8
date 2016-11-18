@@ -20,7 +20,6 @@ libraryDependencies ++= {
     "org.webjars.npm" % "angular__router" % "3.2.0-rc.0",
     "org.webjars.npm" % "angular__platform-browser-dynamic" % ngVersion,
     "org.webjars.npm" % "angular__platform-browser" % ngVersion,
-    "org.webjars.npm" % "angular-in-memory-web-api" % "0.1.13",
     "org.webjars.npm" % "systemjs" % "0.19.39",
     "org.webjars.npm" % "rxjs" % "5.0.0-beta.12",
     "org.webjars.npm" % "es6-promise" % "3.1.2",
