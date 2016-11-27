@@ -10,8 +10,8 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 
 GET     /api/heroes                 controllers.Heroes.all
 POST    /api/heroes                 controllers.Heroes.create
-PUT     /api/heroes/:id             controllers.Heroes.update(id)
-DELETE  /api/heroes/:id             controllers.Heroes.delete(id)
+PUT     /api/heroes/:id             controllers.Heroes.update(id:Int)
+DELETE  /api/heroes/:id             controllers.Heroes.delete(id:Int)
 
 GET     /api/*notFound              controllers.Application.notFound(notFound)
 

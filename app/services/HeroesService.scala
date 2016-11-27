@@ -2,9 +2,15 @@ package services
 
 import javax.inject.Singleton
 
+import play.api.libs.json.Json
+
 import scala.concurrent.Future
 
 case class Hero(id: Int, name: String)
+
+object Hero{
+  implicit val format = Json.format[Hero]
+}
 
 @Singleton
 class HeroesService {
