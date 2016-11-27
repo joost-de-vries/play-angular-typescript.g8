@@ -11,12 +11,11 @@ import { Component }          from '@angular/core';
     </nav>
     <router-outlet></router-outlet>
   `,
-  styleUrls: ['assets/app/app.component.css']
+  styleUrls: ['assets/app/app.component.css'],
 })
 export class AppComponent {
-  title = 'Tour of Heroes';
+  public title = 'Tour of Heroes';
 }
-
 
 /*
 Copyright 2016 Google Inc. All Rights Reserved.

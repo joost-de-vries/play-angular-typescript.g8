@@ -27,3 +27,8 @@ We can do both without changing our source code by using `sbt ~run` for the form
 "I've created the application through activator and it runs fine in activator but it hangs when I try to run it through sbt"  
 This is a [known problem](https://github.com/typesafehub/activator/issues/1036) with activator. Activator generates a file `project\play-fork-run.sbt` that causes this. If you remove it or comment out its contents the application will run in sbt.
 
+##History
+
+### v0.2.0-beta.5
+- replace todomvc with tour of heroes as demo ng2 application. tx [Isammoc](https://github.com/Isammoc)
+- use 'tslint:reommended' as a basis for tslint rules. Downgrade typescript to a supported version by tslint 3.x

@@ -10,10 +10,10 @@ import { HeroService } from './hero.service';
 //  moduleId: module.id,
   selector: 'my-hero-detail',
   templateUrl: 'assets/app/hero-detail.component.html',
-  styleUrls: [ 'assets/app/hero-detail.component.css' ]
+  styleUrls: [ 'assets/app/hero-detail.component.css' ],
 })
 export class HeroDetailComponent implements OnInit {
-  hero: Hero;
+  public hero: Hero;
 
   constructor(
     private heroService: HeroService,
@@ -21,22 +21,21 @@ export class HeroDetailComponent implements OnInit {
     private location: Location
   ) {}
 
-  ngOnInit(): void {
-    this.route.params
+  public ngOnInit(): void {
+    this.route.params // tslint:disable-next-line:no-string-literal
       .switchMap((params: Params) => this.heroService.getHero(+params['id']))
       .subscribe(hero => this.hero = hero);
   }
 
-  save(): void {
+  public save(): void {
     this.heroService.update(this.hero)
       .then(() => this.goBack());
   }
 
-  goBack(): void {
+  public goBack(): void {
     this.location.back();
   }
 }
-
 
 /*
 Copyright 2016 Google Inc. All Rights Reserved.

@@ -1,5 +1,5 @@
 name := """play-angular2-typescript"""
-version := "0.2.0-beta.4"
+version := "0.2.0-beta.5"
 lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
 scalaVersion := "2.11.8"
@@ -27,7 +27,7 @@ libraryDependencies ++= {
     "org.webjars.npm" % "core-js" % "2.4.1",
     "org.webjars.npm" % "symbol-observable" % "1.0.1",
 
-    "org.webjars.npm" % "typescript" % "2.1.1",
+    "org.webjars.npm" % "typescript" % "2.0.10",
 
     //tslint dependency
     "org.webjars.npm" % "tslint-eslint-rules" % "2.1.0",

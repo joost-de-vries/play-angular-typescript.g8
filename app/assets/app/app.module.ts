@@ -19,20 +19,19 @@ import { HeroSearchComponent }  from './hero-search.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   declarations: [
     AppComponent,
     DashboardComponent,
     HeroDetailComponent,
     HeroesComponent,
-    HeroSearchComponent
+    HeroSearchComponent,
   ],
   providers: [ HeroService ],
-  bootstrap: [ AppComponent ]
+  bootstrap: [ AppComponent ],
 })
 export class AppModule { }
-
 
 /*
 Copyright 2016 Google Inc. All Rights Reserved.

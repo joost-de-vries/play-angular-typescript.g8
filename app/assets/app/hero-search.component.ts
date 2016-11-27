@@ -11,10 +11,10 @@ import { Hero } from './hero';
   selector: 'hero-search',
   templateUrl: 'assets/app/hero-search.component.html',
   styleUrls: [ 'assets/app/hero-search.component.css' ],
-  providers: [HeroSearchService]
+  providers: [HeroSearchService],
 })
 export class HeroSearchComponent implements OnInit {
-  heroes: Observable<Hero[]>;
+  public heroes: Observable<Hero[]>;
   private searchTerms = new Subject<string>();
 
   constructor(
@@ -22,11 +22,11 @@ export class HeroSearchComponent implements OnInit {
     private router: Router) {}
 
   // Push a search term into the observable stream.
-  search(term: string): void {
+  public search(term: string): void {
     this.searchTerms.next(term);
   }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.heroes = this.searchTerms
       .debounceTime(300)        // wait for 300ms pause in events
       .distinctUntilChanged()   // ignore if next search term is same as previous
@@ -37,17 +37,16 @@ export class HeroSearchComponent implements OnInit {
         : Observable.of<Hero[]>([]))
       .catch(error => {
         // TODO: real error handling
-        console.log(error);
+//        console.log(error);
         return Observable.of<Hero[]>([]);
       });
   }
 
-  gotoDetail(hero: Hero): void {
+  public gotoDetail(hero: Hero): void {
     let link = ['/detail', hero.id];
     this.router.navigate(link);
   }
 }
-
 
 /*
 Copyright 2016 Google Inc. All Rights Reserved.

@@ -9,13 +9,12 @@ export class HeroSearchService {
 
   constructor(private http: Http) {}
 
-  search(term: string): Observable<Hero[]> {
+  public search(term: string): Observable<Hero[]> {
     return this.http
                .get(`app/heroes/?name=${term}`)
                .map((r: Response) => r.json().data as Hero[]);
   }
 }
-
 
 /*
 Copyright 2016 Google Inc. All Rights Reserved.
