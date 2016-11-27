@@ -7,3 +7,13 @@ GET     /                           controllers.Application.index
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+GET     /api/heroes                 controllers.Heroes.all
+POST    /api/heroes                 controllers.Heroes.create
+PUT     /api/heroes/:id             controllers.Heroes.update(id:Int)
+DELETE  /api/heroes/:id             controllers.Heroes.delete(id:Int)
+
+GET     /api/*notFound              controllers.Application.notFound(notFound)
+
+# Map 404 to an index bis
+GET     /*others                    controllers.Application.other(others)

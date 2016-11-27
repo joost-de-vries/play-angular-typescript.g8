@@ -2,12 +2,13 @@
 <!doctype html>
 <html lang="en" data-framework="angular2">
     <head>
+        <base href="/" />
         @* In this version of the application the typescript compilation is done by the play framework.
            The browser downloads .js files. *@
         <meta charset="utf-8">
-        <title>Angular2 • TodoMVC</title>
+        <title>Angular Tour of Heroes</title>
         <link rel="stylesheet" href="@routes.Assets.versioned("lib/todomvc-common/base.css")">
-        <link rel="stylesheet" href="assets/stylesheets/todomvc-app.css">
+        <link rel="stylesheet" href="assets/stylesheets/styles.css">
         <script type='text/javascript' src='@routes.Assets.versioned("lib/systemjs/dist/system-polyfills.js")'></script>
         <script type='text/javascript' src='@routes.Assets.versioned("lib/core-js/client/shim.min.js")'></script>
         <script type='text/javascript' src='@routes.Assets.versioned("lib/zone.js/dist/zone.js")'></script>
@@ -36,6 +37,7 @@
                 'compiler',
                 'core',
                 'forms',
+                'router',
                 'http',
                 'platform-browser',
                 'platform-browser-dynamic',
@@ -55,7 +57,7 @@
 
           // Add package entries for angular packages
         var setPackageConfig = System.packageWithIndex ? packIndex : packUmd;
-        ngPackageNames.forEach(setPackageConfig)
+        ngPackageNames.forEach(setPackageConfig);
 
           // Add map entries for angular packages
         ngPackageNames.forEach(function(pkgName){
@@ -64,7 +66,7 @@
 
         System.config({
             map : map,
-            packages: packages,
+            packages: packages
         });
         @* SystemJs works out which other modules our app module depends on and will download and load them*@
         System.import('app')
@@ -73,14 +75,6 @@
 		</script>
     </head>
     <body>
-        <todo-app></todo-app>
-        <footer class="info">
-            <p>Double-click to edit a todo</p>
-            <p>
-				Created by <a href="http://github.com/samccone">Sam Saccone</a> and <a href="http://github.com/colineberhardt">Colin Eberhardt</a>
-                using <a href="http://angular.io">Angular2</a>
-			</p>
-            <p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
-        </footer>
+        <my-app>Loading...</my-app>
     </body>
 </html>
