@@ -3,29 +3,33 @@
   "rules": {
     /* ng2 rules */
 
-    "directive-selector-name": [true, "camelCase"],
-    "component-selector-name": [true, "kebab-case"],
-    "directive-selector-type": [true, "attribute"],
-    "component-selector-type": [true, "element"],
-    "use-input-property-decorator": true,
-    "use-output-property-decorator": true,
-    "use-host-property-decorator": true,
-    "no-attribute-parameter-decorator": true,
-    "no-input-rename": true,
-    "no-output-rename": true,
-    "no-forward-ref" :true,
-    "use-life-cycle-interface": true,
-    "use-pipe-transform-interface": true,
-    "pipe-naming": [true, "camelCase", "todo"],
-    "component-class-suffix": true,
-    "directive-class-suffix": true,
-    "import-destructuring-spacing": false,
+//    "directive-selector": [true, "attribute", "sg", "camelCase"],
+//    "component-selector": [true, "element", "sg", "kebab-case"],
+//    "use-input-property-decorator": true,
+//    "use-output-property-decorator": true,
+//    "use-host-property-decorator": true,
+//    "no-attribute-parameter-decorator": true,
+//    "no-input-rename": true,
+//    "no-output-rename": true,
+//    "no-forward-ref": true,
+//    "use-life-cycle-interface": true,
+//    "use-pipe-transform-interface": true,
+//    "pipe-naming": [true, "camelCase", "sg"],
+//    "component-class-suffix": true,
+//    "directive-class-suffix": true,
+//    "import-destructuring-spacing": true,
+//    "templates-use-public": true,
+//    "no-access-missing-member": true,
+//    "invoke-injectable": true,
 
 
     "no-empty": true, /* this is an eslint rule */
 
     /* you can override any of the default tslint rules provided by 'tslint:recommended' */
     "object-literal-sort-keys": false,
-    "quotemark": [true, "single", "avoid-escape"]
+    "quotemark": [true, "single", "avoid-escape"],
+    "ordered-imports": false,
+    "arrow-parens": false,
+    "object-literal-shorthand": false
   }
 }

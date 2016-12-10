@@ -1,5 +1,5 @@
 name := """play-angular2-typescript"""
-version := "0.2.0-beta.5"
+version := "0.2.0-beta.6"
 lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
 scalaVersion := "2.11.8"
@@ -27,11 +27,12 @@ libraryDependencies ++= {
     "org.webjars.npm" % "core-js" % "2.4.1",
     "org.webjars.npm" % "symbol-observable" % "1.0.1",
 
-    "org.webjars.npm" % "typescript" % "2.0.10",
+    "org.webjars.npm" % "typescript" % "2.1.1",
 
     //tslint dependency
-    "org.webjars.npm" % "tslint-eslint-rules" % "2.1.0",
-    "org.webjars.npm" % "codelyzer" % "0.0.28",
+    "org.webjars.npm" % "tslint-eslint-rules" % "3.1.0",
+    "org.webjars.npm" % "tslint-microsoft-contrib" % "2.0.12",
+    //   "org.webjars.npm" % "codelyzer" % "2.0.0-beta.1",
     "org.webjars.npm" % "types__jasmine" % "2.2.26-alpha" % "test"
     //test
     //  "org.webjars.npm" % "jasmine-core" % "2.4.1"
@@ -48,4 +49,5 @@ resolveFromWebjarsNodeModulesDir := true
   ng2LintRulesDir.value
 ))
 
+logLevel in tslint := Level.Debug
 routesGenerator := InjectedRoutesGenerator
