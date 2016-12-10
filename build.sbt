@@ -27,7 +27,7 @@ libraryDependencies ++= {
     "org.webjars.npm" % "core-js" % "2.4.1",
     "org.webjars.npm" % "symbol-observable" % "1.0.1",
 
-    "org.webjars.npm" % "typescript" % "2.1.1",
+    "org.webjars.npm" % "typescript" % "2.1.4",
 
     //tslint dependency
     "org.webjars.npm" % "tslint-eslint-rules" % "3.1.0",
