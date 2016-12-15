@@ -43,6 +43,8 @@ dependencyOverrides += "org.webjars.npm" % "minimatch" % "3.0.0"
 // use the webjars npm directory (target/web/node_modules ) for resolution of module imports of angular2/core etc
 resolveFromWebjarsNodeModulesDir := true
 
+outFile in typescript:= "app/main.js"
+
 // use the combined tslint and eslint rules plus ng2 lint rules
 (rulesDirectories in tslint) := Some(List(
   tslintEslintRulesDir.value,
@@ -50,4 +52,5 @@ resolveFromWebjarsNodeModulesDir := true
 ))
 
 logLevel in tslint := Level.Debug
+logLevel in typescript := Level.Debug
 routesGenerator := InjectedRoutesGenerator
