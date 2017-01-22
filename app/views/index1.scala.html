@@ -1,80 +1,54 @@
 @()
 <!doctype html>
 <html lang="en" data-framework="angular2">
-    <head>
-        <base href="/" />
-        @* In this version of the application the typescript compilation is done by the play framework.
-           The browser downloads .js files. *@
-        <meta charset="utf-8">
-        <title>Angular Tour of Heroes</title>
-        <link rel="stylesheet" href="@routes.Assets.versioned("lib/todomvc-common/base.css")">
-        <link rel="stylesheet" href="assets/stylesheets/styles.css">
-        <script type='text/javascript' src='@routes.Assets.versioned("lib/systemjs/dist/system-polyfills.js")'></script>
-        <script type='text/javascript' src='@routes.Assets.versioned("lib/core-js/client/shim.min.js")'></script>
-        <script type='text/javascript' src='@routes.Assets.versioned("lib/zone.js/dist/zone.js")'></script>
-        <script type='text/javascript' src='@routes.Assets.versioned("lib/reflect-metadata/Reflect.js")'></script>
-        <script type='text/javascript' src='@routes.Assets.versioned("lib/systemjs/dist/system.src.js")'></script>
+  <head>
+    @angularUrls(title="Angular Tour of Heroes")
+    <script>
 
-        <script>    @* our app is downloaded as individual javascript files by SystemJs
-                     after compilation by sbt-typescript*@
-            var map = {
-                'app': 'assets/app',
-                '@@angular':'assets/lib/@@angular',
-                'rxjs':'assets/lib/rxjs',
-                'symbol-observable': 'assets/lib/symbol-observable'
+    @* our app is downloaded as individual javascript files by SystemJs
+             after compilation by sbt-typescript*@
+    System.config({
+      paths: {
+        // paths serve as alias
+        'libs:': 'assets/lib/'
+      },
+      // map tells the System loader where to look for things
+      map: {
+        // our app is within the app folder
+        app: 'assets/app',
 
-            };
+        // angular bundles
+        '@@angular/core': 'libs:angular__core/bundles/core.umd.js',
+        '@@angular/common': 'libs:angular__common/bundles/common.umd.js',
+        '@@angular/compiler': 'libs:angular__compiler/bundles/compiler.umd.js',
+        '@@angular/platform-browser': 'libs:angular__platform-browser/bundles/platform-browser.umd.js',
+        '@@angular/platform-browser-dynamic': 'libs:angular__platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
+        '@@angular/http': 'libs:angular__http/bundles/http.umd.js',
+        '@@angular/router': 'libs:angular__router/bundles/router.umd.js',
+        '@@angular/forms': 'libs:angular__forms/bundles/forms.umd.js',
 
-
-        var packages = {
-                'app': {main: 'main.js', defaultExtension: 'js'},
-                'rxjs': {defaultExtension: 'js'},
-                'assets/lib': {defaultExtension: 'js'},
-                'symbol-observable': {defaultExtension: 'js', main: 'index.js'}
-            };
-        var ngPackageNames = [
-                'common',
-                'compiler',
-                'core',
-                'forms',
-                'router',
-                'http',
-                'platform-browser',
-                'platform-browser-dynamic',
-                'router'
-            ];
-
-        function packIndex(pkgName) {
-          packages['@@angular/'+pkgName] = { main: 'index.js', defaultExtension: 'js' };
+        // other libraries
+        'rxjs': 'libs:rxjs'
+      },
+      // packages tells the System loader how to load when no filename and/or no extension
+      packages: {
+        app: {
+          defaultExtension: 'js'
+        },
+        rxjs: {
+          defaultExtension: 'js'
         }
-        function packUmd(pkgName) {
-          packages['@@angular/'+pkgName] = { main: '/bundles/' + pkgName + '.umd.js', defaultExtension: 'js' };
-        }
-          // Most environments should use UMD; some (Karma) need the individual index files
-        function addAngularModulesToMap(pkgName) {
-          map['@@angular/'+pkgName] = 'assets/lib/angular__' + pkgName;
-        }
+      }
+    });
 
-          // Add package entries for angular packages
-        var setPackageConfig = System.packageWithIndex ? packIndex : packUmd;
-        ngPackageNames.forEach(setPackageConfig);
+    @* SystemJs works out which other modules our app module depends on and will download and load them*@
+    System.import('app/main')
+      .catch(console.error.bind(console));
 
-          // Add map entries for angular packages
-        ngPackageNames.forEach(function(pkgName){
-           addAngularModulesToMap(pkgName)
-        });
+    </script>
 
-        System.config({
-            map : map,
-            packages: packages
-        });
-        @* SystemJs works out which other modules our app module depends on and will download and load them*@
-        System.import('app')
-            .catch(console.error.bind(console));
-
-		</script>
-    </head>
-    <body>
-        <my-app>Loading...</my-app>
-    </body>
+  </head>
+  <body>
+    <my-app>Loading...</my-app>
+  </body>
 </html>
