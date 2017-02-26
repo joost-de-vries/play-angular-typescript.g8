@@ -28,8 +28,6 @@ We can do both without changing our source code by using `sbt ~run` for the form
 This is a [known problem](https://github.com/typesafehub/activator/issues/1036) with activator. Activator generates a file `project\play-fork-run.sbt` that causes this. If you remove it or comment out its contents the application will run in sbt.
 
 ##History
-### v4.4.2
-- tslint 4.4.2
 
 ### v0.2.0-beta.6
 - uses tslint 4.0.2
