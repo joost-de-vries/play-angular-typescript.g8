@@ -7,6 +7,8 @@ incOptions := incOptions.value.withNameHashing(true)
 updateOptions := updateOptions.value.withCachedResolution(cachedResoluton = true)
 JsEngineKeys.engineType := JsEngineKeys.EngineType.Node
 
+resolvers += Resolver.jcenterRepo
+
 libraryDependencies ++= {
   val ngVersion="2.2.0"
   Seq(
@@ -28,11 +30,11 @@ libraryDependencies ++= {
     "org.webjars.npm" % "core-js" % "2.4.1",
     "org.webjars.npm" % "symbol-observable" % "1.0.1",
 
-    "org.webjars.npm" % "typescript" % "2.1.4",
+    "org.webjars.npm" % "typescript" % "2.2.1",
 
     //tslint dependency
-    "org.webjars.npm" % "tslint-eslint-rules" % "3.1.0",
-    "org.webjars.npm" % "tslint-microsoft-contrib" % "2.0.12",
+    "org.webjars.npm" % "tslint-eslint-rules" % "3.4.0",
+    "org.webjars.npm" % "tslint-microsoft-contrib" % "4.0.0",
     //   "org.webjars.npm" % "codelyzer" % "2.0.0-beta.1",
     "org.webjars.npm" % "types__jasmine" % "2.2.26-alpha" % "test"
     //test
