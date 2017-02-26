@@ -5,6 +5,7 @@ lazy val root = (project in file(".")).enablePlugins(PlayScala)
 scalaVersion := "2.11.8"
 incOptions := incOptions.value.withNameHashing(true)
 updateOptions := updateOptions.value.withCachedResolution(cachedResoluton = true)
+JsEngineKeys.engineType := JsEngineKeys.EngineType.Node
 
 libraryDependencies ++= {
   val ngVersion="2.2.0"
