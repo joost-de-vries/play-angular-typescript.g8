@@ -1,10 +1,11 @@
 name := """play-angular2-typescript"""
-version := "0.2.0-beta.6"
+version := "0.2.0-beta.7"
 lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
 scalaVersion := "2.11.8"
 incOptions := incOptions.value.withNameHashing(true)
 updateOptions := updateOptions.value.withCachedResolution(cachedResoluton = true)
+//we use nodejs to make our typescript build as fast as possible
 JsEngineKeys.engineType := JsEngineKeys.EngineType.Node
 
 resolvers += Resolver.jcenterRepo

@@ -22,11 +22,8 @@
       ]
     },
     /* noImplicitAny when you want your typescript to be fully typed */
-    "noImplicitAny":true,
-    "noFallthroughCasesInSwitch":true,
-    "noImplicitReturns":true,
-    "noImplicitThis":true,
-    // "strictNullChecks":true, doesn't work yet with @angular RC4
+    "strict":true,
+    "strictNullChecks":false, //doesn't work yet with @angular RC4
     "outDir": "./target/ts",
     "lib": ["es6", "dom"]
   },
