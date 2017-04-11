@@ -6,6 +6,7 @@ cache:
 scala:
   - 2.11.6
 script:
-  - sbt stage
+  - sbt "stage -DtsCompileMode=stage"
+node_js: "node"
 jdk:
   - oraclejdk8
