@@ -1,12 +1,14 @@
+sudo: required
+dist: trusty
 language: scala
-sudo: false
 cache:
   directories:
   - $HOME/.ivy2
 scala:
   - 2.11.6
-script:
-  - sbt stage -DtsCompileMode=stage
-node_js: "node"
+node_js:
+  - "6"
 jdk:
   - oraclejdk8
+script:
+  - sbt stage -DtsCompileMode=stage
