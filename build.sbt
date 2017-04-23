@@ -8,7 +8,10 @@ updateOptions := updateOptions.value.withCachedResolution(cachedResoluton = true
 //we use nodejs to make our typescript build as fast as possible
 JsEngineKeys.engineType := JsEngineKeys.EngineType.Node
 
-resolvers += Resolver.jcenterRepo
+resolvers ++= Seq(
+  Resolver.jcenterRepo,
+  Resolver.bintrayRepo("webjars","maven")
+)
 
 libraryDependencies ++= {
   val ngVersion="2.2.0"

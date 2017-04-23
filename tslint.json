@@ -1,5 +1,8 @@
 {
   "extends": "tslint:recommended",
+  "lintOptions": {
+    "fix": true
+  },
   "rules": {
     /* ng2 rules */
 
@@ -30,6 +33,7 @@
     "quotemark": [true, "single", "avoid-escape"],
     "ordered-imports": false,
     "arrow-parens": false,
-    "object-literal-shorthand": false
+    "object-literal-shorthand": false,
+    "import-spacing": false
   }
 }
