@@ -25,7 +25,8 @@
     "strict":true,
     "strictNullChecks":false, //doesn't work yet with @angular RC4
     "outDir": "./target/ts",
-    "lib": ["es6", "dom"]
+    "lib": ["es6", "dom"],
+    "typeRoots": ["target/web/node-modules/main/webjars/@types"]
   },
   /* the information below is not used by sbt-typescript. but you can use it if you want to run tsc -p .*/
   "exclude": [
