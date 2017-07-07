@@ -1,10 +1,4 @@
-import {
-    describe,
-    it,
-    inject,
-    beforeEachProviders,
-    TestComponentBuilder
-} from '@angular/core/testing';
+
 import { Todo } from './app/services/store';
 
 // class MockTodoStorage implements TodoStorage {}
@@ -12,12 +6,12 @@ import { Todo } from './app/services/store';
 // #docregion describeIt
 describe('some component', () => {
     it('does something', () => {
-        const todo = <Todo>{
+        const todo = {
             completed: true,
             editing: true,
-            title: 'bla'
-        };
+            title: 'bla',
+        } as Todo;
         // This is a test.
-        console.log('running js test '+JSON.stringify(todo));
+        console.log('running js test ' + JSON.stringify(todo));
     });
 });
