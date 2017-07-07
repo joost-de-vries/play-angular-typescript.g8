@@ -6,7 +6,7 @@ addSbtPlugin("com.typesafe.play" % "sbt-plugin" % "2.6.1")
 addSbtPlugin("name.de-vries" % "sbt-typescript" % "2.4.1")
 
 // checks your typescript code for error prone constructions
-addSbtPlugin("name.de-vries" % "sbt-tslint" % "5.1.0")
+//addSbtPlugin("name.de-vries" % "sbt-tslint" % "4.4.2")
 
 addSbtPlugin("com.typesafe.sbt" % "sbt-digest" % "1.1.0")
 

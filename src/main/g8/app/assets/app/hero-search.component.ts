@@ -1,55 +1,54 @@
 import { Component, OnInit } from '@angular/core';
-import { Router }            from '@angular/router';
-import { Observable }        from 'rxjs/Observable';
-import { Subject }           from 'rxjs/Subject';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
+import { Subject } from 'rxjs/Subject';
 
 import { HeroSearchService } from './hero-search.service';
 import { Hero } from './hero';
 
+import 'rxjs/add/observable/of';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/operator/distinctUntilChanged';
+import 'rxjs/add/operator/switchMap';
+
 @Component({
-//  moduleId: module.id,
-  selector: 'hero-search',
-  templateUrl: 'assets/app/hero-search.component.html',
-  styleUrls: [ 'assets/app/hero-search.component.css' ],
-  providers: [HeroSearchService],
+  selector: 'my-hero-search',
+  templateUrl: './hero-search.component.html',
+  styleUrls: ['./hero-search.component.css'],
+  providers: [HeroSearchService]
 })
 export class HeroSearchComponent implements OnInit {
-  public heroes: Observable<Hero[]>;
+  heroes: Observable<Hero[]>;
   private searchTerms = new Subject<string>();
 
   constructor(
     private heroSearchService: HeroSearchService,
-    private router: Router) {}
+    private router: Router) { }
 
-  // Push a search term into the observable stream.
-  public search(term: string): void {
+  search(term: string): void {
+    // Push a search term into the observable stream.
     this.searchTerms.next(term);
   }
 
-  public ngOnInit(): void {
-    this.heroes = this.searchTerms.asObservable()
+  ngOnInit(): void {
+    this.heroes = this.searchTerms
       .debounceTime(300)        // wait for 300ms pause in events
       .distinctUntilChanged()   // ignore if next search term is same as previous
-      .switchMap((term: string) => term   // switch to new observable each time
+      .switchMap(term => term   // switch to new observable each time
         // return the http search observable
         ? this.heroSearchService.search(term)
         // or the observable of empty heroes if no search term
         : Observable.of<Hero[]>([]))
-      .catch((error: any) => {
+      .catch(error => {
         // TODO: real error handling
-//        console.log(error);
+        console.log(`Error in component ... ${error}`);
         return Observable.of<Hero[]>([]);
       });
   }
 
-  public gotoDetail(hero: Hero): void {
+  gotoDetail(hero: Hero): void {
     const link = ['/detail', hero.id];
     this.router.navigate(link);
   }
 }
-
-/*
-Copyright 2016 Google Inc. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/

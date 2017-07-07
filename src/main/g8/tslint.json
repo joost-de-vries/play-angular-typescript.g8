@@ -4,6 +4,7 @@
     "fix": true
   },
   "rules": {
+    "no-console",
     /* ng2 rules */
 
 //    "directive-selector": [true, "attribute", "sg", "camelCase"],
