@@ -18,7 +18,8 @@
     "paths": {
       "*": [
         "*",
-        "target/web/node-modules/main/webjars/*"
+        "target/web/node-modules/main/webjars/*",
+        "target/web/node-modules/test/webjars/*"
       ]
     },
     /* noImplicitAny when you want your typescript to be fully typed */
@@ -26,8 +27,7 @@
     "strictNullChecks":false, //doesn't work yet with @angular RC4
     "outDir": "./target/ts",
     "lib": ["es6", "dom"],
-    "typeRoots": ["target/web/node-modules/main/webjars/@types","target/web/node-modules/test/webjars/@types"],
-    "types": ["jasmine"]
+    "typeRoots": ["target/web/node-modules/main/webjars/@types","target/web/node-modules/test/webjars/@types"]
   },
   /* the information below is not used by sbt-typescript. but you can use it if you want to run tsc -p .*/
   "exclude": [
