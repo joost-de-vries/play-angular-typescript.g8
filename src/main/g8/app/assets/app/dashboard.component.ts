@@ -1,27 +1,29 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
-import { Hero }        from './hero';
+import { Hero } from './hero';
 import { HeroService } from './hero.service';
 
 @Component({
-//  moduleId: module.id,
   selector: 'my-dashboard',
-  templateUrl: 'assets/app/dashboard.component.html',
-  styleUrls: [ 'assets/app/dashboard.component.css' ],
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  public heroes: Hero[] = [];
+  heroes: Hero[] = [];
 
-  constructor(private heroService: HeroService) { }
+  constructor(
+    private router: Router,
+    private heroService: HeroService) {
+  }
 
-  public ngOnInit(): void {
+  ngOnInit(): void {
     this.heroService.getHeroes()
       .then(heroes => this.heroes = heroes.slice(1, 5));
   }
-}
 
-/*
-Copyright 2016 Google Inc. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/
+  gotoDetail(hero: Hero): void {
+    const link = ['/detail', hero.id];
+    this.router.navigate(link);
+  }
+}

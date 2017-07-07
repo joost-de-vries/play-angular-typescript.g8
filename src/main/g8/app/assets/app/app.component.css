@@ -1,6 +1,7 @@
 h1 {
   font-size: 1.2em;
   color: #999;
+  color: #555;
   margin-bottom: 0;
 }
 h2 {
@@ -23,13 +24,12 @@ nav a:hover {
   color: #039be5;
   background-color: #CFD8DC;
 }
-nav a.active {
+nav a.router-link-active {
   color: #039be5;
 }
-
-
-/*
-Copyright 2016 Google Inc. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/
+.header-bar {
+  background-color: rgb(0,120,215);
+  height: 4px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

@@ -3,6 +3,7 @@ label {
   width: 3em;
   margin: .5em 0;
   color: #607D8B;
+  color: rgb(0,120,215);
   font-weight: bold;
 }
 input {
@@ -24,13 +25,6 @@ button:hover {
 }
 button:disabled {
   background-color: #eee;
-  color: #ccc; 
+  color: #ccc;
   cursor: auto;
 }
-
-
-/*
-Copyright 2016 Google Inc. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/

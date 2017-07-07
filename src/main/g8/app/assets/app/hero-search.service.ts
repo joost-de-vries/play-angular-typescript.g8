@@ -1,23 +1,24 @@
-import { Injectable }     from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
-import { Observable } from 'rxjs';
 
-import { Hero }           from './hero';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/throw';
+
+import { Hero } from './hero';
 
 @Injectable()
 export class HeroSearchService {
+  constructor(private http: Http) { }
 
-  constructor(private http: Http) {}
-
-  public search(term: string): Observable<Hero[]> {
+  search(term: string): Observable<Hero[]> {
     return this.http
-               .get(`app/heroes/?name=${term}`)
-               .map((r: Response) => r.json().data as Hero[]);
+      .get(`api/heroes/?name=${term}`)
+      .map((r: Response) => r.json().data as Hero[])
+      .catch((error: any) => {
+          console.error('An friendly error occurred', error);
+          return Observable.throw(error.message || error);
+      });
   }
 }
-
-/*
-Copyright 2016 Google Inc. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/

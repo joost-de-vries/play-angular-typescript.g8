@@ -14,7 +14,7 @@ resolvers ++= Seq(
 )
 
 libraryDependencies ++= {
-  val ngVersion="2.2.0"
+  val ngVersion="4.2.5"
   Seq(
     guice,
     ehcache,
@@ -27,13 +27,13 @@ libraryDependencies ++= {
     "org.webjars.npm" % "angular__core" % ngVersion,
     "org.webjars.npm" % "angular__http" % ngVersion,
     "org.webjars.npm" % "angular__forms" % ngVersion,
-    "org.webjars.npm" % "angular__router" % "3.2.0",
+    "org.webjars.npm" % "angular__router" % ngVersion,
     "org.webjars.npm" % "angular__platform-browser-dynamic" % ngVersion,
     "org.webjars.npm" % "angular__platform-browser" % ngVersion,
     "org.webjars.npm" % "systemjs" % "0.20.14",
     "org.webjars.npm" % "rxjs" % "5.4.2",
     "org.webjars.npm" % "reflect-metadata" % "0.1.8",
-    "org.webjars.npm" % "zone.js" % "0.6.26",
+    "org.webjars.npm" % "zone.js" % "0.8.4",
     "org.webjars.npm" % "core-js" % "2.4.1",
     "org.webjars.npm" % "symbol-observable" % "1.0.1",
 
@@ -42,7 +42,7 @@ libraryDependencies ++= {
     //tslint dependency
     "org.webjars.npm" % "tslint-eslint-rules" % "3.4.0",
     "org.webjars.npm" % "tslint-microsoft-contrib" % "4.0.0",
-    //   "org.webjars.npm" % "codelyzer" % "2.0.0-beta.1",
+       "org.webjars.npm" % "codelyzer" % "3.1.1",
     "org.webjars.npm" % "types__jasmine" % "2.5.53" % "test"
     //test
      // "org.webjars.npm" % "jasmine-core" % "2.6.4" %"test"
@@ -66,4 +66,3 @@ resolveFromWebjarsNodeModulesDir := true
 jasmineFilter in jasmine := GlobFilter("*Test.js") | GlobFilter("*Spec.js") | GlobFilter("*.spec.js")
 logLevel in jasmine := Level.Info
 logLevel in tslint := Level.Info
-routesGenerator := InjectedRoutesGenerator
