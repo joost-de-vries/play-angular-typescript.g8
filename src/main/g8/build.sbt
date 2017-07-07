@@ -1,8 +1,8 @@
 name := """play-angular2-typescript"""
-version := "0.2.0-beta.7"
+version := "0.2.1"
 lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
-scalaVersion := "2.11.8"
+scalaVersion := "2.11.11"
 incOptions := incOptions.value.withNameHashing(true)
 updateOptions := updateOptions.value.withCachedResolution(cachedResoluton = true)
 //we use nodejs to make our typescript build as fast as possible
@@ -16,7 +16,10 @@ resolvers ++= Seq(
 libraryDependencies ++= {
   val ngVersion="2.2.0"
   Seq(
-    cache,
+    guice,
+    ehcache,
+
+    "com.typesafe.play" %% "play-json" % "2.6.1",
 
     //angular2 dependencies
     "org.webjars.npm" % "angular__common" % ngVersion,
@@ -34,7 +37,7 @@ libraryDependencies ++= {
     "org.webjars.npm" % "core-js" % "2.4.1",
     "org.webjars.npm" % "symbol-observable" % "1.0.1",
 
-    "org.webjars.npm" % "typescript" % "2.2.1",
+    "org.webjars.npm" % "typescript" % "2.4.1",
 
     //tslint dependency
     "org.webjars.npm" % "tslint-eslint-rules" % "3.4.0",

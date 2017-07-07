@@ -3,13 +3,13 @@ package controllers
 import javax.inject.Inject
 
 import play.api.libs.json.{JsObject, JsValue, Json, Writes}
-import play.api.mvc.{Action, Controller}
+import play.api.mvc.{Action, InjectedController}
 import services.HeroesService
 
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
 
-class Heroes @Inject()(heroesService: HeroesService) extends Controller {
+class Heroes @Inject()(heroesService: HeroesService) extends InjectedController {
   def all = Action.async {
     heroesService.all.map { s => Ok(toDataField(s)) }
   }

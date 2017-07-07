@@ -27,15 +27,15 @@ export class HeroSearchComponent implements OnInit {
   }
 
   public ngOnInit(): void {
-    this.heroes = this.searchTerms
+    this.heroes = this.searchTerms.asObservable()
       .debounceTime(300)        // wait for 300ms pause in events
       .distinctUntilChanged()   // ignore if next search term is same as previous
-      .switchMap(term => term   // switch to new observable each time
+      .switchMap((term: string) => term   // switch to new observable each time
         // return the http search observable
         ? this.heroSearchService.search(term)
         // or the observable of empty heroes if no search term
         : Observable.of<Hero[]>([]))
-      .catch(error => {
+      .catch((error: any) => {
         // TODO: real error handling
 //        console.log(error);
         return Observable.of<Hero[]>([]);
