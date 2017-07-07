@@ -1,8 +1,7 @@
-This is a [Giter8](http://www.foundweekends.org/giter8/) template for a Play Angular starter application with incremental Typescript compilation.
+This is a Play Angular starter application with incremental Typescript compilation.
 
 ## Installation
-Run `sbt new joost-de-vries/play-angular-typescript.g8` and you'll have a local application.  
-Or you can just clone this repo and move the contents of `src/main/g8` to the root.  
+Run `sbt ~run` and you'll have the standard Angular2 Heroes application [running locally](http://localhost:9000/dashboard).  
 
 **NB**: Make sure you don't have `typescript` installed globally. If you do have a global npm installation of `typescript` that version will be picked up. And then all bets are off.
 A symptom of having an older global `typescript` installation is that you get a `JsTaskFailure` / `TypeError` that the function `convertCompilerOptionsFromJson` can't be found. See [this issue](https://github.com/joost-de-vries/play-angular2-typescript/issues/1)
