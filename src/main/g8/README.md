@@ -19,7 +19,7 @@ We can do both without changing our source code by using `sbt ~run` for the form
 
 
 ## History
-### v0.2.1
+### v0.2.2
 - adds support for jasmine tests
 - upgrades to Angular 4.2.5
 
