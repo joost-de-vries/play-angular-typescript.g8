@@ -65,5 +65,5 @@ resolveFromWebjarsNodeModulesDir := true
 
 // the naming conventions of our test files
 jasmineFilter in jasmine := GlobFilter("*Test.js") | GlobFilter("*Spec.js") | GlobFilter("*.spec.js")
-logLevel in jasmine := Level.Debug
+logLevel in jasmine := Level.Info
 logLevel in tslint := Level.Info
