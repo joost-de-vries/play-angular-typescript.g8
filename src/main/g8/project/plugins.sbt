@@ -9,7 +9,7 @@ addSbtPlugin("name.de-vries" % "sbt-typescript" % "2.4.1-2")
 addSbtPlugin("name.de-vries" % "sbt-tslint" % "5.1.0")
 
 // runs jasmine tests
-addSbtPlugin("name.de-vries" % "sbt-jasmine" % "0.0.2")
+addSbtPlugin("name.de-vries" % "sbt-jasmine" % "0.0.3")
 
 
 addSbtPlugin("com.typesafe.sbt" % "sbt-digest" % "1.1.0")
