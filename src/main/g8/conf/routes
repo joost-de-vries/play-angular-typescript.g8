@@ -13,7 +13,3 @@ POST    /api/heroes                 controllers.Heroes.create
 PUT     /api/heroes/:id             controllers.Heroes.update(id:Int)
 DELETE  /api/heroes/:id             controllers.Heroes.delete(id:Int)
 
-GET     /api/*notFound              controllers.Application.notFound(notFound)
-
-# Map 404 to an index bis
-GET     /*others                    controllers.Application.other(others)

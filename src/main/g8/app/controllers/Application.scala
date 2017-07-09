@@ -3,7 +3,7 @@ package controllers
 import play.api._
 import play.api.mvc._
 
-class Application extends Controller {
+class Application extends InjectedController {
 
   def index = Action {
     /** change the template here to use a different way of compilation and loading of the ts ng2 app.
@@ -13,8 +13,4 @@ class Application extends Controller {
       */
     Ok(views.html.index1())
   }
-
-  def notFound(notFound: String) = Default.notFound
-
-  def other(others: String) = index
 }

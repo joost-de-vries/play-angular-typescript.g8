@@ -5,6 +5,7 @@ lazy val root = (project in file(".")).enablePlugins(PlayScala)
 scalaVersion := "2.11.11"
 incOptions := incOptions.value.withNameHashing(true)
 updateOptions := updateOptions.value.withCachedResolution(cachedResoluton = true)
+
 //we use nodejs to make our typescript build as fast as possible
 JsEngineKeys.engineType := JsEngineKeys.EngineType.Node
 
@@ -43,9 +44,9 @@ libraryDependencies ++= {
     "org.webjars.npm" % "tslint-eslint-rules" % "3.4.0",
     "org.webjars.npm" % "tslint-microsoft-contrib" % "4.0.0",
        "org.webjars.npm" % "codelyzer" % "3.1.1",
-    "org.webjars.npm" % "types__jasmine" % "2.5.53" % "test"
+    "org.webjars.npm" % "types__jasmine" % "2.5.53" % "test",
     //test
-     // "org.webjars.npm" % "jasmine-core" % "2.6.4" %"test"
+    "org.webjars.npm" % "jasmine-core" % "2.6.4"
   )
 }
 dependencyOverrides += "org.webjars.npm" % "minimatch" % "3.0.0"
@@ -64,5 +65,5 @@ resolveFromWebjarsNodeModulesDir := true
 
 // the naming conventions of our test files
 jasmineFilter in jasmine := GlobFilter("*Test.js") | GlobFilter("*Spec.js") | GlobFilter("*.spec.js")
-logLevel in jasmine := Level.Info
+logLevel in jasmine := Level.Debug
 logLevel in tslint := Level.Info
