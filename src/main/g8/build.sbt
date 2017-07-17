@@ -43,7 +43,7 @@ libraryDependencies ++= {
     //tslint dependency
     "org.webjars.npm" % "tslint-eslint-rules" % "3.4.0",
     "org.webjars.npm" % "tslint-microsoft-contrib" % "4.0.0",
-       "org.webjars.npm" % "codelyzer" % "3.1.1",
+    //"org.webjars.npm" % "codelyzer" % "3.1.1", see below
     "org.webjars.npm" % "types__jasmine" % "2.5.53" % "test",
     //test
     "org.webjars.npm" % "jasmine-core" % "2.6.4"
@@ -60,7 +60,7 @@ resolveFromWebjarsNodeModulesDir := true
 // use the combined tslint and eslint rules plus ng2 lint rules
 (rulesDirectories in tslint) := Some(List(
   tslintEslintRulesDir.value,
-  ng2LintRulesDir.value
+  ng2LintRulesDir.value //codelyzer uses 'cssauron' which can't resolve 'through' see https://github.com/chrisdickinson/cssauron/pull/10
 ))
 
 // the naming conventions of our test files
