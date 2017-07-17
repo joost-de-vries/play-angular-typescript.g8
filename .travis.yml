@@ -10,6 +10,8 @@ scala:
   - 2.11.6
 jdk:
   - oraclejdk8
+before_script:
+  - cd src/main/g8
 script:
   - nvm use $NODE_VERSION
   - sbt stage -DtsCompileMode=stage
