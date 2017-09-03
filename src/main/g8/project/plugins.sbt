@@ -3,7 +3,7 @@
 addSbtPlugin("com.typesafe.play" % "sbt-plugin" % "2.6.1")
 
 // provides server side compilation of typescript to ecmascript 5 or 3
-addSbtPlugin("name.de-vries" % "sbt-typescript" % "2.4.1-2")
+addSbtPlugin("name.de-vries" % "sbt-typescript" % "2.5.2")
 
 // checks your typescript code for error prone constructions
 addSbtPlugin("name.de-vries" % "sbt-tslint" % "5.1.0")

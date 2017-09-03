@@ -1,5 +1,5 @@
 name := """play-angular2-typescript"""
-version := "0.2.2"
+version := "0.2.3"
 lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
 scalaVersion := "2.11.11"
@@ -67,3 +67,4 @@ resolveFromWebjarsNodeModulesDir := true
 jasmineFilter in jasmine := GlobFilter("*Test.js") | GlobFilter("*Spec.js") | GlobFilter("*.spec.js")
 logLevel in jasmine := Level.Info
 logLevel in tslint := Level.Info
+logLevel in typescript := Level.Info
