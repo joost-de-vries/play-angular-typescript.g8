@@ -1,7 +1,7 @@
 This is a Play Angular starter application with incremental Typescript compilation.
 
 ## Installation
-Run `sbt ~run` and you'll have the standard Angular2 Heroes application [running locally](http://localhost:9000/dashboard).  
+Run `sbt ~run` and you'll have the standard Angular 4 Heroes application [running locally](http://localhost:9000/dashboard).  
 
 **NB**: Make sure you don't have `typescript` installed globally. If you do have a global npm installation of `typescript` that version will be picked up. And then all bets are off.
 A symptom of having an older global `typescript` installation is that you get a `JsTaskFailure` / `TypeError` that the function `convertCompilerOptionsFromJson` can't be found. See [this issue](https://github.com/joost-de-vries/play-angular2-typescript/issues/1)
