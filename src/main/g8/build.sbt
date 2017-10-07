@@ -3,7 +3,6 @@ version := "0.2.3"
 lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
 scalaVersion := "2.11.11"
-incOptions := incOptions.value.withNameHashing(true)
 updateOptions := updateOptions.value.withCachedResolution(cachedResoluton = true)
 
 //we use nodejs to make our typescript build as fast as possible
@@ -64,7 +63,7 @@ resolveFromWebjarsNodeModulesDir := true
 ))
 
 // the naming conventions of our test files
-jasmineFilter in jasmine := GlobFilter("*Test.js") | GlobFilter("*Spec.js") | GlobFilter("*.spec.js")
-logLevel in jasmine := Level.Info
+//jasmineFilter in jasmine := GlobFilter("*Test.js") | GlobFilter("*Spec.js") | GlobFilter("*.spec.js")
+//logLevel in jasmine := Level.Info
 logLevel in tslint := Level.Info
 logLevel in typescript := Level.Info

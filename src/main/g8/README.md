@@ -19,8 +19,12 @@ We can do both without changing our source code by using `sbt ~run` for the form
 
 
 ## History
+### v0.3.0
+- upgrades to sbt 1.0 and play 2.6.6
+
 ### v0.2.3 
 - upgrades to typescript 2.5.2
+
 ### v0.2.2
 - adds support for jasmine tests
 - upgrades to Angular 4.2.5
