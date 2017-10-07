@@ -48,7 +48,10 @@ libraryDependencies ++= {
     "org.webjars.npm" % "jasmine-core" % "2.6.4"
   )
 }
-dependencyOverrides += "org.webjars.npm" % "minimatch" % "3.0.0"
+dependencyOverrides ++= Seq(
+  "org.webjars.npm" % "minimatch" % "3.0.0",
+  "org.webjars.npm" % "glob" % "7.1.2"
+)
 
 // use the webjars npm directory (target/web/node_modules ) for resolution of module imports of angular2/core etc
 resolveFromWebjarsNodeModulesDir := true
